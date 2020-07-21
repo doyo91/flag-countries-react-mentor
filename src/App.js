@@ -2,32 +2,29 @@ import React from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
+import reducer from 'redux/reducer';
+
 import { CountryList } from "components/CountryList";
+import { ActionList } from "components/ActionList";
+import { Header } from "components/Header";
 
 const initialState = {
   countryList: [],
+  countryListByName: [],
+  countryFilteredByRegion: [],
+  filterByRegion: "",
 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "SET_COUNTRY_LIST": {
-      console.log("Actualizo lista");
-      return {...state, countryList: action.payload};
-    }
-    default: {
-      return state;
-    }
-  }
-}
+
 
 const store = createStore(reducer, initialState);
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+        <Header />
+        <ActionList />
         <CountryList />
-      </div>
     </Provider>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -9,16 +9,24 @@ const CountryListStyled = styled.div`
   display: grid;
   row-gap: 2.3em;
   justify-content: center;
-  background: var(--bg-primary-color);
-  border: 1px solid red;
   padding: 4em 2em;
 `;
 
 export const CountryList = () => {
-  const countryList = useSelector((state) => state.countryList);
   const dispatch = useDispatch();
-  console.log(countryList);
 
+  const countryListByName = useSelector((state) => state.countryListByName);
+
+
+  const countryList = useSelector((state) => {
+    if (state.filterByRegion !== "" && countryListByName.length === 0) {
+      return state.countryFilteredByRegion;
+    }
+    if (countryListByName.length > 0) {
+      return countryListByName;
+    }
+    return state.countryList;
+  });
 
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
@@ -27,18 +35,18 @@ export const CountryList = () => {
       })
       .then((list) => {
         dispatch({
-          type: 'SET_COUNTRY_LIST',
-          payload: list
-        })
-        console.log(list.length);
+          type: "SET_COUNTRY_LIST",
+          payload: list,
+        });
       })
       .catch(() => {
         console.log("Error con la Api");
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <CountryListStyled>
+
       {countryList.map(
         ({ alpha3Code, flag, name, population, capital, region }) => {
           return (
