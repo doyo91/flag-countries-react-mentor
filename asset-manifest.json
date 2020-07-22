@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/flag-countries-react-mentor/static/css/main.a0b04535.chunk.css",
-    "main.js": "/flag-countries-react-mentor/static/js/main.8683c2ba.chunk.js",
-    "main.js.map": "/flag-countries-react-mentor/static/js/main.8683c2ba.chunk.js.map",
+    "main.js": "/flag-countries-react-mentor/static/js/main.40bb7822.chunk.js",
+    "main.js.map": "/flag-countries-react-mentor/static/js/main.40bb7822.chunk.js.map",
     "runtime-main.js": "/flag-countries-react-mentor/static/js/runtime-main.04441b7a.js",
     "runtime-main.js.map": "/flag-countries-react-mentor/static/js/runtime-main.04441b7a.js.map",
     "static/js/2.a97bcbf5.chunk.js": "/flag-countries-react-mentor/static/js/2.a97bcbf5.chunk.js",
     "static/js/2.a97bcbf5.chunk.js.map": "/flag-countries-react-mentor/static/js/2.a97bcbf5.chunk.js.map",
     "index.html": "/flag-countries-react-mentor/index.html",
-    "precache-manifest.6846f62d5a3611c02505fc48cf06a4c8.js": "/flag-countries-react-mentor/precache-manifest.6846f62d5a3611c02505fc48cf06a4c8.js",
+    "precache-manifest.a5123bea2c87a354b297cb7a0d66726a.js": "/flag-countries-react-mentor/precache-manifest.a5123bea2c87a354b297cb7a0d66726a.js",
     "service-worker.js": "/flag-countries-react-mentor/service-worker.js",
     "static/css/main.a0b04535.chunk.css.map": "/flag-countries-react-mentor/static/css/main.a0b04535.chunk.css.map",
     "static/js/2.a97bcbf5.chunk.js.LICENSE.txt": "/flag-countries-react-mentor/static/js/2.a97bcbf5.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.04441b7a.js",
     "static/js/2.a97bcbf5.chunk.js",
     "static/css/main.a0b04535.chunk.css",
-    "static/js/main.8683c2ba.chunk.js"
+    "static/js/main.40bb7822.chunk.js"
   ]
 }
