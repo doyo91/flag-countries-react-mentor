@@ -41,7 +41,7 @@ function App() {
   return (
     <main className={mainClass}>
       <Provider store={store}>
-        <Router>
+        <Router basename="/flag-countries-react-mentor">
           <Header setDarkMode={setDarkMode} darkMode={darkMode} />
           <Switch>
             <Route exact path="/" component={Home} />

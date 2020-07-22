@@ -2,6 +2,7 @@
   "name": "rest-flags-countries",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://doyo91.github.io/flag-countries-react-mentor/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
