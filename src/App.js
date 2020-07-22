@@ -1,12 +1,14 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import reducer from 'redux/reducer';
+import reducer from "redux/reducer";
 
-import { CountryList } from "components/CountryList";
-import { ActionList } from "components/ActionList";
+
 import { Header } from "components/Header";
+import { Home } from "views/Home";
+import { Detail } from "views/Detail";
 
 const initialState = {
   countryList: [],
@@ -15,16 +17,21 @@ const initialState = {
   filterByRegion: "",
 };
 
-
-
 const store = createStore(reducer, initialState);
 
 function App() {
   return (
     <Provider store={store}>
+      <Router>
         <Header />
-        <ActionList />
-        <CountryList />
+        <Switch>
+          <Route exact path="/" component={Home} /> 
+          <Route path="/country/:id" component={Detail} />
+        </Switch>
+      </Router>
+
+
+      
     </Provider>
   );
 }
