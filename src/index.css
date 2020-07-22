@@ -2,33 +2,43 @@
   box-sizing: border-box;
 }
 
-:root {
-  /* Light mode */
-  --bg-primary-color: hsl(0, 0%, 98%);
-  --bg-elements-color: hsl(0, 0%, 100%);
-  --input-color: hsl(0, 0%, 52%);
-  --text-primary: hsl(200, 15%, 8%);
-}
+@import url("https://fonts.google.com/specimen/Nunito+Sans");
 
-[data-theme="dark"] {
-  --bg-primary-color: hsl(207, 26%, 17%);
-  --bg-elements-color: hsl(209, 23%, 22%);
-  --input-color: hsl(0, 0%, 100%);
-  --text-primary: hsl(0, 0%, 100%);
-  
-  /* --toggle: linear-gradient(
-    to right,
-    hsl(210, 78%, 56%) 0%,
-    hsl(146, 68%, 55%) 100%); */
-}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
+}
+
+main {
   color: var(--text-primary);
   background: var(--bg-primary-color);
+
+}
+
+.is-dark-mode {
+  --bg-primary-color: hsl(207, 26%, 17%);
+  --bg-elements-color: hsl(209, 23%, 22%);
+  --input-color: hsl(0, 0%, 100%);
+  --text-primary: hsl(0, 0%, 100%);
+}
+
+.is-light-mode {
+  --bg-primary-color: hsl(0, 0%, 98%);
+  --bg-elements-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 52%);
+  --text-primary: hsl(200, 15%, 8%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary-color: hsl(207, 26%, 17%);
+    --bg-elements-color: hsl(209, 23%, 22%);
+    --input-color: hsl(0, 0%, 100%);
+    --text-primary: hsl(0, 0%, 100%);
+  }
 }
 
 

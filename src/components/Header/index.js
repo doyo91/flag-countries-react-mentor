@@ -7,7 +7,7 @@ const HeaderStyled = styled.header`
   background: var(--bg-elements-color);
   margin-bottom: 1em;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  
+
   .content {
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,6 @@ const HeaderStyled = styled.header`
     h1 {
       margin: 0;
       font-size: 14px;
-      
     }
 
     .dark-mode {
@@ -32,6 +31,10 @@ const HeaderStyled = styled.header`
         font-size: 12px;
         cursor: pointer;
         padding: 0.5em;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
       .moon {
         margin-right: 10px;
@@ -40,11 +43,26 @@ const HeaderStyled = styled.header`
       }
     }
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 3em;
+    .content {
+      h1 {
+        font-size: 24px;
+      }
+
+      .dark-mode {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 `;
 
-export const Header = () => {
+export const Header = ({ setDarkMode, darkMode }) => {
   function handleClick() {
-    console.log("dark mode");
+    setDarkMode(!darkMode);
   }
 
   return (
@@ -57,8 +75,11 @@ export const Header = () => {
           <div className="dark-mode">
             <p onClick={handleClick}>
               <span className="moon">
-                <i className="far fa-moon"></i>
-                {/* <i className="fas fa-moon"></i> */}
+                {darkMode ? (
+                  <i className="fas fa-moon"></i>
+                ) : (
+                  <i className="far fa-moon"></i>
+                )}
               </span>
               Dark Mode
             </p>

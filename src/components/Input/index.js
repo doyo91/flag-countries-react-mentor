@@ -21,11 +21,12 @@ const InputStyled = styled.label`
     line-height: 48px;
     font-size: 0.7em;
     outline: 0;
+    background: var(--bg-elements-color);
+    color: var(--text-primary);
 
     &::-moz-placeholder,
     &::-webkit-input-placeholder {
       color: var(--input-color);
-      background: transparent;
     }
   }
 `;

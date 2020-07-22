@@ -1,22 +1,37 @@
 import React from "react";
 import styled from "styled-components";
-import {useLocation, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import slugify from "slugify";
 
 const CountryStyled = styled.div`
-  width: 264px;
   text-align: left;
   border-radius: 5px;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+
+  &:hover .details {
+    border-radius: 0 0 5px 5px;
+    border: 1px solid var(--input-color);
+    border-top: none;
+  }
 
   img {
     width: 100%;
     height: 160px;
     object-fit: cover;
+    vertical-align: top;
+    border-radius: 5px 5px 0 0;
   }
 
   .details {
     padding: 1.5em;
+    transition: .3s border;
+    /* evitamos movimiento */
+    border: 1px solid transparent;
+    border-top: none;
+    background: var(--bg-elements-color);
+
 
     h2 {
       margin: 0;
@@ -31,11 +46,11 @@ const CountryStyled = styled.div`
   }
 `;
 
-export const Country = ({ flag, name, population, capital, region }) => {
+export const Country = ({ flag, name, population, capital, region, alpha3Code }) => {
   const history = useHistory();
   
   function handleClick() {
-    history.push(`/country/${name}`);
+    history.push(`/country/${slugify(alpha3Code)}`);
   }
 
   return (

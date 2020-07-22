@@ -34,7 +34,7 @@ export default function reducer(state, action) {
       return {
         ...state,
         countryFilteredByRegion,
-        filterByRegion: regionSelected,
+        filterByRegion: regionSelected
       };
     }
 
